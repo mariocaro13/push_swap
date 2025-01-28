@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:31:14 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/28 21:10:49 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/01/28 21:23:55 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 *
 */
 # include <stdlib.h>
+# include <limits.h>
 # include "libft.h"
 
 /**

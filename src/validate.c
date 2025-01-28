@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:05:27 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/28 20:48:15 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/01/28 21:44:57 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,25 @@ int	ft_validate_inputs(int argc, char **argv)
 
 int	ft_is_integer(const char *str)
 {
+	int		sign;
+	long	num;
+
 	if (!str || *str == '\0')
 		return (0);
+	sign = 1;
 	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
 		str++;
+	}
+	num = 0;
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
+			return (0);
+		num = num * 10 + (*str - '0');
+		if ((sign == 1 && num > INT_MAX) || (sign == -1 && (-num) < INT_MIN))
 			return (0);
 		str++;
 	}
