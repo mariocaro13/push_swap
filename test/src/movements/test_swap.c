@@ -1,43 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   test_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 13:14:06 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/29 14:10:28 by mcaro-ro         ###   ########.fr       */
+/*   Created: 2025/01/29 16:46:59 by mcaro-ro          #+#    #+#             */
+/*   Updated: 2025/01/29 18:44:37 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "movements.h"
+#include "test_movements.h"
 
-void	ft_swap(t_stack *stack)
+void	ft_test_swap_operation(t_stack *a, t_stack *b)
 {
-	t_node	*first;
-	t_node	*second;
-
-	if (stack->size < 2)
-		return ;
-	first = stack->top;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	stack->top = second;
-}
-
-void	ft_sa(t_stack *a)
-{
-	ft_swap(a);
-}
-
-void	ft_sb(t_stack *b)
-{
-	ft_swap(b);
-}
-
-void	ft_ss(t_stack *a, t_stack *b)
-{
-	ft_swap(a);
-	ft_swap(b);
+	ft_printf(YELLOW"%s"RESET_COLOR, TEST_SWAP);
+	ft_printf("%s", STACK_BEFORE);
+	ft_print_stacks(a, b);
+	ft_sa(a);
+	ft_printf("%s", STACK_AFTER);
+	ft_print_stacks(a, b);
 }

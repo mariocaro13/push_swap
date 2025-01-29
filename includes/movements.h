@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   movements.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 18:48:04 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/29 16:09:56 by mcaro-ro         ###   ########.fr       */
+/*   Created: 2025/01/29 13:27:17 by mcaro-ro          #+#    #+#             */
+/*   Updated: 2025/01/29 14:11:33 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef MOVEMENTS_H
+# define MOVEMENTS_H
 
 /**
 *  ___ _   _  ____ _    _   _ ____  _____ ____  
@@ -22,33 +22,7 @@
 *
 */
 
-# include "ft_printf.h"
-# include "validate.h"
 # include "stack.h"
-# include "movements.h"
-
-/**
-*  ____  _____ _____ ___ _   _ _____ ____  
-* |  _ \| ____|  ___|_ _| \ | | ____/ ___| 
-* | | | |  _| | |_   | ||  \| |  _| \___ \ 
-* | |_| | |___|  _|  | || |\  | |___ ___) |
-* |____/|_____|_|   |___|_| \_|_____|____/ 
-*
-*/
-
-/** ERROR:
- *  - Defines the error message string.
- *
- * Description:
- *  This define specifies the error message to be displayed when an error occurs.
- *
- * Example usage:
- *  ft_printf("%s", ERROR);
- *
- * Value:
- *  "Error\n"
- */
-# define ERROR "Error\n"
 
 /**
 *  ____  ____   ___ _____ ___ _______   ______  _____ ____  
@@ -58,6 +32,13 @@
 * |_|   |_| \_\\___/ |_| \___/ |_|   |_| |_|   |_____|____/ 
 *
 */
-int	push_swap(int argc, char **argv);
+
+void	ft_swap(t_stack *stack);
+
+void	ft_sa(t_stack *a);
+
+void	ft_sb(t_stack *b);
+
+void	ft_ss(t_stack *a, t_stack *b);
 
 #endif

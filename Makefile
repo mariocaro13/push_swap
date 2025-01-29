@@ -6,7 +6,7 @@
 #    By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/28 18:35:29 by mcaro-ro          #+#    #+#              #
-#    Updated: 2025/01/29 13:22:19 by mcaro-ro         ###   ########.fr        #
+#    Updated: 2025/01/29 17:46:18 by mcaro-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,11 @@ FTPRINTF_DIR = $(INCLUDE_DIR)/ft_printf
 SRC_DIR = src
 LIBFT_DIR = $(SRC_DIR)/libft
 FTPRINTF_DIR = $(SRC_DIR)/ft_printf
-PUSH_SWAP = $(SRC_DIR)/push_swap
-HASH_TABLES = $(SRC_DIR)/hash_tables
-MOVEMENTS = $(SRC_DIR)/movements
-STACK = $(SRC_DIR)/stack
-VALIDATE = $(SRC_DIR)/validate
+PUSH_SWAP_DIR = $(SRC_DIR)/push_swap
+HASH_TABLES_DIR = $(SRC_DIR)/hash_tables
+MOVEMENTS_DIR = $(SRC_DIR)/movements
+STACK_DIR = $(SRC_DIR)/stack
+VALIDATE_DIR = $(SRC_DIR)/validate
 
 # LIBRARIES
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -48,11 +48,12 @@ $(FTPRINTF):
 INCLUDE_DIRS = -I$(INCLUDE_DIR) -I$(SRC_DIR) -I$(LIBFT_DIR) -I$(FTPRINTF_DIR)
 
 # Source files and object files
-SRC = $(SRC_DIR)/main.c				\
-	$(PUSH_SWAP)/push_swap.c		\
-	$(HASH_TABLES)/hash_tables.c	\
-	$(VALIDATE)/validate.c			\
-	$(MOVEMENTS)/swap.c
+SRC = $(SRC_DIR)/main.c					\
+	$(PUSH_SWAP_DIR)/push_swap.c		\
+	$(HASH_TABLES_DIR)/hash_tables.c	\
+	$(VALIDATE_DIR)/validate.c			\
+	$(STACK_DIR)/stack_operations.c		\
+	$(MOVEMENTS_DIR)/swap.c
 	
 # Objects files
 OBJECTS = $(SRC:.c=.o)
@@ -67,7 +68,7 @@ CFLAGS = -Wall -Wextra -Werror $(INCLUDE_DIRS) -g3  -fsanitize=address
 
 # Link object files
 $(NAME): $(OBJECTS) $(LIBFT) $(FTPRINTF)
-	@$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(FTPRINTF) -o $(NAME)
+	@$(CC) $(CFLAGS) $(MAIN_OBJECTS) $(OBJECTS) $(LIBFT) $(FTPRINTF) -o $(NAME)
 	@echo "$(GREEN)$(NAME): $(NAME) has been created successfully!$(RESET)"
 
 # Default target to build the project
@@ -75,13 +76,13 @@ all: $(NAME)
 
 # Clean up object files
 clean:
-	@rm -f $(OBJECTS)
+	@rm -f $(OBJECTS) $(TEST_OBJECTS)
 	@$(MAKE) -C $(LIBFT_DIR) clean --silent
 	@$(MAKE) -C $(FTPRINTF_DIR) clean --silent
 
 # Clean up all generated files
 fclean: clean
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) $(TEST_NAME)
 	@$(MAKE) -C $(LIBFT_DIR) fclean --silent
 	@$(MAKE) -C $(FTPRINTF_DIR) fclean --silent
 
@@ -92,11 +93,38 @@ re: fclean all
 norm: 
 	norminette $(INCLUDE_DIR) $(SRC)
 
-normsrc: 
-	norminette $(SRC)
+#  _____ _____ ____ _____ 
+# |_   _| ____/ ___|_   _|
+#   | | |  _| \___ \ | |  
+#   | | | |___ ___) || |  
+#   |_| |_____|____/ |_|  
+#
 
-normincludes: 
-	norminette $(INCLUDE_DIR)
+TEST_NAME = push_swap_test
+TEST_DIR = test
+TEST_INCLUDES = $(TEST_DIR)/includes
+
+TEST_SRC = $(TEST_DIR)/main.c						\
+	$(PUSH_SWAP_DIR)/push_swap.c					\
+	$(HASH_TABLES_DIR)/hash_tables.c				\
+	$(VALIDATE_DIR)/validate.c						\
+	$(STACK_DIR)/stack_operations.c					\
+	$(MOVEMENTS_DIR)/swap.c							\
+	$(TEST_DIR)/$(STACK_DIR)/print_stack.c			\
+	$(TEST_DIR)/$(STACK_DIR)/test_stack.c			\
+	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_movements.c	\
+	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_swap.c		\
+
+TEST_OBJECTS = $(TEST_SRC:.c=.o)
+
+#Include dirs for testing
+INCLUDE_DIRS = -I$(INCLUDE_DIR) -I$(SRC_DIR) -I$(LIBFT_DIR) -I$(FTPRINTF_DIR) -I$(TEST_INCLUDES)
+
+test: $(TEST_NAME)
+
+$(TEST_NAME): $(TEST_OBJECTS) $(LIBFT) $(FTPRINTF)
+	@$(CC) $(CFLAGS) $(TEST_OBJECTS) $(LIBFT) $(FTPRINTF) -o $(TEST_NAME)
+	@echo "$(GREEN)$(TEST_NAME): $(TEST_NAME) has been created successfully!$(RESET)"
 
 .DEFAULT_GOAL := all
-.PHONY: all clean fclean re norm normsrc normincludes
+.PHONY: all clean fclean re norm normsrc normincludes test

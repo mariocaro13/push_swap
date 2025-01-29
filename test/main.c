@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 13:14:06 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/29 14:10:28 by mcaro-ro         ###   ########.fr       */
+/*   Created: 2025/01/29 16:01:19 by mcaro-ro          #+#    #+#             */
+/*   Updated: 2025/01/29 18:19:59 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "movements.h"
+#include "push_swap.h"
+#include "test_movements.h"
+#include "test_stack.h"
 
-void	ft_swap(t_stack *stack)
+int	main(void)
 {
-	t_node	*first;
-	t_node	*second;
+	t_stack	*a;
+	t_stack	*b;
 
-	if (stack->size < 2)
-		return ;
-	first = stack->top;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	stack->top = second;
-}
-
-void	ft_sa(t_stack *a)
-{
-	ft_swap(a);
-}
-
-void	ft_sb(t_stack *b)
-{
-	ft_swap(b);
-}
-
-void	ft_ss(t_stack *a, t_stack *b)
-{
-	ft_swap(a);
-	ft_swap(b);
+	ft_test_stack_operations(&a, &b);
+	ft_test_stack_init(&a, &b);
+	ft_test_stack_push(a, b);
+	ft_test_movement_operations(&a, &b);
+	ft_free_stack(a);
+	ft_free_stack(b);
+	return (0);
 }
