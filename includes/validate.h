@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:31:14 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/29 01:18:24 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/01/29 01:49:22 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int		ft_is_integer(const char *str);
  *  1 if the values are validated and stored correctly,
  *  0 if an error occurs.
  */
-int		ft_validate_and_store(char **arr, t_node ***set, int table_size);
+int		ft_validate_and_store(char **arr, int table_size, t_node ***set);
 
 /** ft_free_resources:
  *  - Frees resources allocated for the hash table and array.
@@ -98,28 +98,5 @@ int		ft_validate_and_store(char **arr, t_node ***set, int table_size);
  *  This function does not return a value.
  */
 void	ft_free_resources(t_node **set, int table_size, int *arr);
-
-/** ft_validate_inputs:
- *  - Validates inputs and stores values in a hash table.
- *
- * Params:
- *  @param arrc: Number of arguments.
- *  @param arrv: Array of arguments.
- *  @param set: Double pointer to the hash table.
- *
- * Description:
- *  This function validates that the arguments of an array are valid integers,
- * 	and stores them in a hash table.
- *  It also ensures that there are no duplicate values.
- *
- * Example usage:
- *  if (ft_validate_inputs(argc, argv, &set))
- *      // Proceed with valid inputs
- *
- * Return:
- *  1 if the inputs are valid and stored correctly,
- *  0 if an error occurs.
- */
-int		ft_validate_inputs(int arrc, char **arrv, t_node ***set);
 
 #endif

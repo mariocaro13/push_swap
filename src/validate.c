@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:05:27 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/28 23:41:01 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/01/29 01:48:55 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_is_integer(const char *str)
 	return (1);
 }
 
-int	ft_validate_and_store(char **arr, t_node ***set, int table_size)
+int	ft_validate_and_store(char **arr, int table_size, t_node ***set)
 {
 	int	num;
 	int	i;
@@ -72,9 +72,4 @@ void	ft_free_resources(t_node **set, int table_size, int *arr)
 	free(set);
 	if (arr)
 		free(arr);
-}
-
-int	ft_validate_inputs(int argc, char **argv, t_node ***set)
-{
-	return (ft_validate_and_store(argv, set, argc));
 }

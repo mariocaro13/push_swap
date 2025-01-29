@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 18:46:50 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/28 23:50:42 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/01/29 01:49:44 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	push_swap(int arrc, char **arrv)
 
 	if (arrc < 2)
 		return (0);
-	if (!ft_validate_inputs(arrc, arrv, &set))
+	if (!ft_validate_and_store(arrv, arrc, &set))
 	{
 		ft_printf("%s", ERROR);
 		return (1);
