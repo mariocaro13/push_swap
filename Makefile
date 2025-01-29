@@ -6,7 +6,7 @@
 #    By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/28 18:35:29 by mcaro-ro          #+#    #+#              #
-#    Updated: 2025/01/29 13:06:52 by mcaro-ro         ###   ########.fr        #
+#    Updated: 2025/01/29 13:22:19 by mcaro-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,11 @@ FTPRINTF_DIR = $(INCLUDE_DIR)/ft_printf
 SRC_DIR = src
 LIBFT_DIR = $(SRC_DIR)/libft
 FTPRINTF_DIR = $(SRC_DIR)/ft_printf
+PUSH_SWAP = $(SRC_DIR)/push_swap
+HASH_TABLES = $(SRC_DIR)/hash_tables
+MOVEMENTS = $(SRC_DIR)/movements
+STACK = $(SRC_DIR)/stack
+VALIDATE = $(SRC_DIR)/validate
 
 # LIBRARIES
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -43,10 +48,11 @@ $(FTPRINTF):
 INCLUDE_DIRS = -I$(INCLUDE_DIR) -I$(SRC_DIR) -I$(LIBFT_DIR) -I$(FTPRINTF_DIR)
 
 # Source files and object files
-SRC = $(SRC_DIR)/main.c			\
-	$(SRC_DIR)/push_swap.c		\
-	$(SRC_DIR)/hash_tables.c	\
-	$(SRC_DIR)/validate.c
+SRC = $(SRC_DIR)/main.c				\
+	$(PUSH_SWAP)/push_swap.c		\
+	$(HASH_TABLES)/hash_tables.c	\
+	$(VALIDATE)/validate.c			\
+	$(MOVEMENTS)/swap.c
 	
 # Objects files
 OBJECTS = $(SRC:.c=.o)
