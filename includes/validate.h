@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:31:14 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/28 21:23:55 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/01/29 01:18:24 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <stdlib.h>
 # include <limits.h>
 # include "libft.h"
+# include "hash_tables.h"
 
 /**
 *  ____  ____   ___ _____ ___ _______   ______  _____ ____  
@@ -34,64 +35,91 @@
 *
 */
 
-/** ft_validate_inputs:
- *  - Validates the input arguments.
- *
- * Params:
- *  @argc: The number of command-line arguments.
- *  @argv: An array of command-line arguments.
- *
- * Description:
- *  This function validates the input arguments passed to the program. It checks 
- *  if the arguments are valid integers and if there are no duplicate integers.
- *  It returns 1 if the inputs are valid, and 0 otherwise.
- *
- * Example usage:
- *  int result = ft_validate_inputs(argc, argv);
- *  // result will be 1 if inputs are valid, 0 otherwise.
- *
- * Return:
- *  1 if inputs are valid, and 0 otherwise.
- */
-int	ft_validate_inputs(int argc, char **argv);
-
 /** ft_is_integer:
- * - Checks if the given string represents a valid integer.
+ *  - Checks if a string represents a valid integer.
  *
  * Params:
- *  @str: The string to be checked.
+ *  @param str: String to be checked.
  *
  * Description:
- *  This function checks if the given string 'str' represents a valid integer.
- *  It returns 1 if the string is a valid integer, and 0 if it is not.
+ *  This function verifies if the given string represents
+ *  a valid integer within the range of INT_MIN to INT_MAX.
  *
  * Example usage:
- *  int result = ft_is_integer("123");
- *  // result will be 1 because "123" is a valid integer.
+ *  if (ft_is_integer("1234"))
+ *      // The string represents a valid integer
  *
  * Return:
- *  1 if the string is a valid integer, and 0 if it is not.
+ *  1 if the string represents a valid integer,
+ *  0 otherwise.
  */
-int	ft_is_integer(const char *str);
+int		ft_is_integer(const char *str);
 
-/** ft_has_duplicates:
- *  - Checks for duplicate integers in an array.
+/** ft_validate_and_store:
+ *  - Validates and stores values in a hash table.
  *
  * Params:
- *  @arr: The array to be checked.
- *  @size: The size of the array.
+ *  @param arr: Array of command-line arguments.
+ *  @param set: Double pointer to the hash table.
+ *  @param table_size: Size of the hash table.
  *
  * Description:
- *  This function checks if the given array `arr` contains any duplicates.
- *  It returns 1 if there are duplicates, and 0 if there are none.
+ *  This function validates the given arguments and stores
+ *  them in a hash table. It ensures that the arguments are valid integers
+ *  and that there are no duplicate values.
  *
  * Example usage:
- *  int result = ft_has_duplicates(arr, size);
- *  // result will be 1 if duplicates are found, 0 otherwise.
+ *  if (ft_validate_and_store(argv, &set, table_size))
+ *      // Values are valid and stored
  *
  * Return:
- *  1 if duplicates are found, and 0 if none are found.
+ *  1 if the values are validated and stored correctly,
+ *  0 if an error occurs.
  */
-int	ft_has_duplicates(int *arr, int size);
+int		ft_validate_and_store(char **arr, t_node ***set, int table_size);
+
+/** ft_free_resources:
+ *  - Frees resources allocated for the hash table and array.
+ *
+ * Params:
+ *  @param set: Pointer to the hash table.
+ *  @param table_size: Size of the hash table.
+ *  @param arr: Array to be freed (optional).
+ *
+ * Description:
+ *  This function frees the memory allocated for the hash table
+ *  and optionally for an integer array.
+ * 	It ensures that all allocated memory is properly released.
+ *
+ * Example usage:
+ *  ft_free_resources(set, table_size, arr);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_free_resources(t_node **set, int table_size, int *arr);
+
+/** ft_validate_inputs:
+ *  - Validates inputs and stores values in a hash table.
+ *
+ * Params:
+ *  @param arrc: Number of arguments.
+ *  @param arrv: Array of arguments.
+ *  @param set: Double pointer to the hash table.
+ *
+ * Description:
+ *  This function validates that the arguments of an array are valid integers,
+ * 	and stores them in a hash table.
+ *  It also ensures that there are no duplicate values.
+ *
+ * Example usage:
+ *  if (ft_validate_inputs(argc, argv, &set))
+ *      // Proceed with valid inputs
+ *
+ * Return:
+ *  1 if the inputs are valid and stored correctly,
+ *  0 if an error occurs.
+ */
+int		ft_validate_inputs(int arrc, char **arrv, t_node ***set);
 
 #endif

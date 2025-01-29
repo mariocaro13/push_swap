@@ -6,7 +6,7 @@
 #    By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/28 18:35:29 by mcaro-ro          #+#    #+#              #
-#    Updated: 2025/01/28 20:39:44 by mcaro-ro         ###   ########.fr        #
+#    Updated: 2025/01/28 23:38:08 by mcaro-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,8 +39,9 @@ SRC_DIR = src
 INCLUDE_DIRS = -I$(INCLUDE_DIR) -I$(SRC_DIR) -I$(LIBFT_DIR) -I$(FTPRINTF_DIR)
 
 # Source files and object files
-SRC = $(SRC_DIR)/main.c		\
-	$(SRC_DIR)/push_swap.c	\
+SRC = $(SRC_DIR)/main.c			\
+	$(SRC_DIR)/push_swap.c		\
+	$(SRC_DIR)/hash_tables.c	\
 	$(SRC_DIR)/validate.c
 	
 # Objects files
