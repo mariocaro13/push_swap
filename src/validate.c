@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:05:27 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/29 01:48:55 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/01/29 13:09:08 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,26 +42,26 @@ int	ft_is_integer(const char *str)
 int	ft_validate_and_store(char **arr, int table_size, t_node ***set)
 {
 	int	num;
-	int	i;
+	int	index;
 
 	*set = (t_node **)ft_calloc(table_size, sizeof(t_node *));
 	if (!*set)
 		return (0);
-	i = 1;
-	while (i < table_size)
+	index = 1;
+	while (index < table_size)
 	{
-		if (!arr[i] || !*arr[i] || !ft_is_integer(arr[i]))
+		if (!arr[index] || !*arr[index] || !ft_is_integer(arr[index]))
 		{
 			ft_free_resources(*set, table_size, NULL);
 			return (0);
 		}
-		num = ft_atoi(arr[i]);
+		num = ft_atoi(arr[index]);
 		if (!ft_insert_into_set(*set, table_size, num))
 		{
 			ft_free_resources(*set, table_size, NULL);
 			return (0);
 		}
-		i++;
+		index++;
 	}
 	return (1);
 }
