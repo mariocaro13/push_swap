@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 16:35:55 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/29 18:46:50 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/01/31 16:57:02 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_test_stack_init(t_stack **a, t_stack **b)
 	*a = ft_init_stack();
 	*b = ft_init_stack();
 	if (*a && *b && !(*a)->top && !(*b)->top)
-		ft_printf(STACKS_INITIALIZED_SUCCESSFULLY);
+		ft_printf(GREEN"%s"RESET_COLOR, STACKS_INITIALIZED_SUCCESSFULLY);
 	else
-		ft_printf(RED ERROR_INITIALIZING_STACKS);
+		ft_printf(RED"%s"RESET_COLOR, ERROR_INITIALIZING_STACKS);
 	ft_print_stacks(*a, *b);
 }
 
@@ -57,8 +57,12 @@ void	ft_test_free_stacks(t_stack *a, t_stack *b)
 
 void	ft_test_stack_operations(t_stack **a, t_stack **b)
 {
+	ft_printf(YELLOW"%s"RESET_COLOR, TEST_STACK_INITIALIZE);
 	ft_test_stack_init(a, b);
+	ft_printf(YELLOW"%s"RESET_COLOR, TEST_STACK_PUSH);
 	ft_test_stack_push(*a, *b);
+	ft_printf(YELLOW"%s"RESET_COLOR, TEST_STACK_POP);
 	ft_test_stack_pop(*a, *b);
+	ft_printf(YELLOW"%s"RESET_COLOR, TEST_STACK_FREE);
 	ft_test_free_stacks(*a, *b);
 }

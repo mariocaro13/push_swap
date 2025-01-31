@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:27:17 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/29 14:11:33 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/01/31 16:46:30 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,77 @@
 *
 */
 
+/** ft_swap:
+ *  - Swaps the top two elements of a stack.
+ *
+ * Params:
+ *  @param stack: Pointer to the stack.
+ *
+ * Description:
+ *  This function swaps the top two elements of the stack.
+ *  If the stack has less than two elements, the function does nothing.
+ *
+ * Example usage:
+ *  ft_swap(stack);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
 void	ft_swap(t_stack *stack);
 
+/** ft_sa:
+ *  - Swaps the top two elements of stack a.
+ *
+ * Params:
+ *  @param a: Pointer to stack a.
+ *
+ * Description:
+ *  This function swaps the top two elements of stack a
+ *  by calling the ft_swap function.
+ *
+ * Example usage:
+ *  ft_sa(a);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
 void	ft_sa(t_stack *a);
 
+/** ft_sb:
+ *  - Swaps the top two elements of stack b.
+ *
+ * Params:
+ *  @param b: Pointer to stack b.
+ *
+ * Description:
+ *  This function swaps the top two elements of stack b
+ *  by calling the ft_swap function.
+ *
+ * Example usage:
+ *  ft_sb(b);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
 void	ft_sb(t_stack *b);
 
+/** ft_ss:
+ *  - Swaps the top two elements of both stack a and stack b.
+ *
+ * Params:
+ *  @param a: Pointer to stack a.
+ *  @param b: Pointer to stack b.
+ *
+ * Description:
+ *  This function swaps the top two elements of both stack a and stack b
+ *  by calling the ft_swap function for both stacks.
+ *
+ * Example usage:
+ *  ft_ss(a, b);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
 void	ft_ss(t_stack *a, t_stack *b);
 
 #endif

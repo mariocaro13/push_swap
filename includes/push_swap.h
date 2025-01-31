@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 18:48:04 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/29 16:09:56 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/01/31 16:34:01 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,7 @@
 *
 */
 
-/** ERROR:
- *  - Defines the error message string.
- *
- * Description:
- *  This define specifies the error message to be displayed when an error occurs.
- *
- * Example usage:
- *  ft_printf("%s", ERROR);
- *
- * Value:
- *  "Error\n"
- */
+// Messages
 # define ERROR "Error\n"
 
 /**
@@ -58,6 +47,7 @@
 * |_|   |_| \_\\___/ |_| \___/ |_|   |_| |_|   |_____|____/ 
 *
 */
+
 int	push_swap(int argc, char **argv);
 
 #endif
