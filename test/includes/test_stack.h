@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 16:50:34 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/31 16:53:28 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 13:27:59 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,23 @@
 # define YELLOW			"\x1b[33m"
 # define BLUE			"\x1b[34m"
 
-// Messages
-# define TEST_STACK_INITIALIZE "TEST: INITIALIZE STACK\n"
+// Initialize Messages
+# define TEST_STACK_INITIALIZE 			"TEST: INITIALIZE STACK\n"
 # define STACKS_INITIALIZED_SUCCESSFULLY "Stacks initialized successfully.\n"
 # define ERROR_INITIALIZING_STACKS		"Error initializing stacks.\n"
+// Push Messages
 # define TEST_STACK_PUSH 				"TEST: PUSH ELEMENTS\n"
 # define STACK_A_AFTER_PUSHING_ELEMENTS	"Stack a after pushing elements:\n"
+// Pop Messages
 # define TEST_STACK_POP 				"TEST: POP ELEMENT\n"
 # define POPPED_ELEMENT					"Popped element: "
 # define STACK_A_AFTER_POPPING_ELEMENT	"Stack a after popping an element:\n"
+// Free Messages
 # define TEST_STACK_FREE 				"TEST: FREE STACKS\n"
+// Test output Messages
 # define STACKS_FREED_SUCCESSFULLY		"Stacks freed successfully.\n"
 # define ERROR_FREEING_STACKS			"Error freeing stacks.\n"
+# define STACK_FAILED					"Stack operations failed.\n"
 
 /**
 *  ____  ____   ___ _____ ___ _______   ______  _____ ____  
@@ -62,26 +67,6 @@
 * |_|   |_| \_\\___/ |_| \___/ |_|   |_| |_|   |_____|____/ 
 *
 */
-
-/** ft_test_stack_operations:
- *  - Performs a series of stack operations for testing purposes.
- *
- * Params:
- *  @param a: Double pointer to stack a.
- *  @param b: Double pointer to stack b.
- *
- * Description:
- *  This function performs a series of stack operations, including
- *  initialization, pushing elements, popping an element, and freeing
- *  the stacks. It verifies the state of the stacks at each step.
- *
- * Example usage:
- *  ft_test_stack_operations(&a, &b);
- *
- * Return:
- *  This function does not return a value.
- */
-void	ft_test_stack_operations(t_stack **a, t_stack **b);
 
 /** ft_test_stack_init:
  *  - Initializes stacks and verifies their state.
@@ -96,12 +81,16 @@ void	ft_test_stack_operations(t_stack **a, t_stack **b);
  *  It then prints the state of the stacks.
  *
  * Example usage:
- *  ft_test_stack_init(&a, &b);
+ *  int result = ft_test_stack_init(&a, &b);
+ *  if (result != 0) {
+ *      // Handle error
+ *  }
  *
  * Return:
- *  This function does not return a value.
+ *  0 if the initialization passed,
+ *  1 if the initialization failed.
  */
-void	ft_test_stack_init(t_stack **a, t_stack **b);
+int		ft_test_stack_init(t_stack **a, t_stack **b);
 
 /** ft_test_stack_push:
  *  - Pushes elements onto stack a and prints the state.
@@ -115,12 +104,16 @@ void	ft_test_stack_init(t_stack **a, t_stack **b);
  *  It then prints the state of the stacks.
  *
  * Example usage:
- *  ft_test_stack_push(a, b);
+ *  int result = ft_test_stack_push(a, b);
+ *  if (result != 0) {
+ *      // Handle error
+ *  }
  *
  * Return:
- *  This function does not return a value.
+ *  0 if the push operation passed,
+ *  1 if the push operation failed.
  */
-void	ft_test_stack_push(t_stack *a, t_stack *b);
+int		ft_test_stack_push(t_stack *a, t_stack *b);
 
 /** ft_test_stack_pop:
  *  - Pops an element from stack a and prints the state.
@@ -137,7 +130,7 @@ void	ft_test_stack_push(t_stack *a, t_stack *b);
  *  ft_test_stack_pop(a, b);
  *
  * Return:
- *  This function does not return a value.
+ *  This function no longer returns a value.
  */
 void	ft_test_stack_pop(t_stack *a, t_stack *b);
 
@@ -156,8 +149,32 @@ void	ft_test_stack_pop(t_stack *a, t_stack *b);
  *  ft_test_free_stacks(a, b);
  *
  * Return:
- *  This function does not return a value.
+ *  This function no longer returns a value.
  */
 void	ft_test_free_stacks(t_stack *a, t_stack *b);
+
+/** ft_test_stack_operations:
+ *  - Performs a series of stack operations for testing purposes.
+ *
+ * Params:
+ *  @param a: Double pointer to stack a.
+ *  @param b: Double pointer to stack b.
+ *
+ * Description:
+ *  This function performs a series of stack operations, including
+ *  initialization, pushing elements, popping an element, and freeing
+ *  the stacks. It verifies the state of the stacks at each step.
+ *
+ * Example usage:
+ *  int result = ft_test_stack_operations(&a, &b);
+ *  if (result != 0) {
+ *      // Handle error
+ *  }
+ *
+ * Return:
+ *  0 if the test passed,
+ *  1 if the test failed.
+ */
+int		ft_test_stack_operations(t_stack **a, t_stack **b);
 
 #endif

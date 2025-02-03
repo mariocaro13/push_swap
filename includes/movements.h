@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:27:17 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/31 16:46:30 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 12:18:32 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@
 * |_|   |_| \_\\___/ |_| \___/ |_|   |_| |_|   |_____|____/ 
 *
 */
+
+// SWAP
 
 /** ft_swap:
  *  - Swaps the top two elements of a stack.
@@ -105,5 +107,64 @@ void	ft_sb(t_stack *b);
  *  This function does not return a value.
  */
 void	ft_ss(t_stack *a, t_stack *b);
+
+// PUSh
+
+/** ft_push:
+ *  - Pushes the top element of stack b onto stack a.
+ *
+ * Params:
+ *  @param a: Pointer to stack a.
+ *  @param b: Pointer to stack b.
+ *
+ * Description:
+ *  This function pushes the top element of stack b onto stack a.
+ *  If stack b is empty, the function does nothing.
+ *
+ * Example usage:
+ *  ft_push(a, b);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_push(t_stack *a, t_stack *b);
+
+/** ft_pa:
+ *  - Pushes the top element of stack b onto stack a by calling ft_push.
+ *
+ * Params:
+ *  @param a: Pointer to stack a.
+ *  @param b: Pointer to stack b.
+ *
+ * Description:
+ *  This function calls ft_push to push the top element of stack b onto stack a.
+ *  If stack b is empty, the function does nothing.
+ *
+ * Example usage:
+ *  ft_pa(a, b);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_pa(t_stack *a, t_stack *b);
+
+/** ft_pb:
+ *  - Pushes the top element of stack a onto stack b.
+ *
+ * Params:
+ *  @param a: Pointer to stack a.
+ *  @param b: Pointer to stack b.
+ *
+ * Description:
+ *  This function calls ft_push to push the top element of stack a onto stack b.
+ *  If stack a is empty, the function does nothing.
+ *
+ * Example usage:
+ *  ft_pb(a, b);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_pb(t_stack *a, t_stack *b);
 
 #endif

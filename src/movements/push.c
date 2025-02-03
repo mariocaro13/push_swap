@@ -1,43 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 13:14:06 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 12:46:53 by mcaro-ro         ###   ########.fr       */
+/*   Created: 2025/02/03 12:09:05 by mcaro-ro          #+#    #+#             */
+/*   Updated: 2025/02/03 12:18:39 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "movements.h"
 
-void	ft_swap(t_stack *stack)
+void	ft_push(t_stack *a, t_stack *b)
 {
-	t_node	*first;
-	t_node	*second;
+	int	value;
 
-	if (stack->size < 2)
+	if (b->size == 0)
 		return ;
-	first = stack->top;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	stack->top = second;
+	value = ft_pop_element(b);
+	ft_push_element(a, value);
 }
 
-void	ft_sa(t_stack *a)
+void	ft_pa(t_stack *a, t_stack *b)
 {
-	ft_swap(a);
+	ft_push(a, b);
 }
 
-void	ft_sb(t_stack *b)
+void	ft_pb(t_stack *a, t_stack *b)
 {
-	ft_swap(b);
-}
-
-void	ft_ss(t_stack *a, t_stack *b)
-{
-	ft_sa(a);
-	ft_sb(b);
+	ft_push(b, a);
 }
