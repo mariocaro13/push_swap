@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 16:35:55 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 13:10:33 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:41:30 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_test_stack_push(t_stack *a, t_stack *b)
 	ft_push_element(b, 4);
 	ft_push_element(b, 5);
 	ft_push_element(b, 6);
-	ft_printf(STACK_A_AFTER_PUSHING_ELEMENTS);
+	ft_printf(STACKS_AFTER PUSHING_ELEMENTS);
 	ft_print_stacks(a, b);
 	return (0);
 }
@@ -46,7 +46,7 @@ void	ft_test_stack_pop(t_stack *a, t_stack *b)
 
 	value = ft_pop_element(a);
 	ft_printf("%s%d\n", POPPED_ELEMENT, value);
-	ft_printf(STACK_A_AFTER_POPPING_ELEMENT);
+	ft_printf(STACKS_AFTER POPPING_ELEMENT);
 	ft_print_stacks(a, b);
 }
 

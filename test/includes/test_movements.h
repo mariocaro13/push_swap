@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 16:42:21 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 13:43:10 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:29:25 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,25 +43,21 @@
 
 // Swap Messages
 # define TEST_SWAP "TEST: SWAP\n"
-# define STACK_BEFORE_SA "Stack a before ft_sa: \n"
-# define STACK_AFTER_SA "Stack a after ft_sa: \n"
-# define STACK_BEFORE_SB "Stack a before ft_sb: \n"
-# define STACK_AFTER_SB "Stack a after ft_sb: \n"
-# define STACK_BEFORE_SS "Stack a before ft_ss: \n"
-# define STACK_AFTER_SS "Stack a after ft_ss: \n"
-# define SWAP_SA_FAILED "Swap sa operation failed.\n"
-# define SWAP_SB_FAILED "Swap sb operation failed.\n"
-# define SWAP_SS_FAILED "Swap ss operation failed.\n"
-# define SWAP_FAILED "Swap operations failed.\n"
+# define FT_SA			"ft_sa: "
+# define FT_SB			"ft_sb: "
+# define FT_SS			"ft_ss: "
+# define SWAP_FAILED	"Swap operation failed.\n"
 // Push Messages
 # define TEST_PUSH "TEST: PUSH\n"
-# define STACK_BEFORE_PA "Stack a before ft_pa: \n"
-# define STACK_AFTER_PA "Stack a after ft_pa: \n"
-# define STACK_BEFORE_PB "Stack a before ft_pb: \n"
-# define STACK_AFTER_PB "Stack a after ft_pb: \n"
-# define PUSH_PA_FAILED "Push pa operation failed.\n"
-# define PUSH_PB_FAILED "Push pb operation failed.\n"
-# define PUSH_FAILED "Push operations failed.\n"
+# define FT_PA			"ft_pa: "
+# define FT_PB			"ft_pb: "
+# define PUSH_FAILED	"Push operation failed.\n"
+// Rotate Messages
+# define TEST_ROTATE "TEST: ROTATE\n"
+# define FT_RA			"ft_ra: "
+# define FT_RB			"ft_rb: "
+# define FT_RR			"ft_rr: "
+# define ROTATE_FAILED	"Rotate operation failed.\n"
 // Failed Messages
 # define TEST_FAILED "Test failed: "
 // Failed Swap Messages
