@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 13:56:25 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 14:06:40 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:13:07 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_rotate(t_stack *stack)
 	while (last->next)
 		last = last->next;
 	stack->top = first->next;
-	last->next = first;
 	first->next = NULL;
+	last->next = first;
 }
 
 void	ft_ra(t_stack *a)

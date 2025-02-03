@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 16:42:21 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 14:29:25 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:46:31 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,11 +130,11 @@ int	ft_test_swap_operations(t_stack *a, t_stack *b);
  * Description:
  *  This function performs a series of push operations,
  *  including pa and pb, and verifies the state of the stacks
- *  after each operation. If any operation fails, devuelve 1
- *  y prints an appropriate error message.
+ *  after each operation. If any operation fails, returns 1
+ *  and prints an appropriate error message.
  *
  * Example usage:
- *  int result = ft_test_push_operations(&a, &b);
+ *  int result = ft_test_push_operations(a, b);
  *  if (result != 0) {
  *      // Handle error
  *  }
@@ -144,5 +144,30 @@ int	ft_test_swap_operations(t_stack *a, t_stack *b);
  *  1 if the test failed.
  */
 int	ft_test_push_operations(t_stack *a, t_stack *b);
+
+/** ft_test_rotate_operations:
+ *  - Performs a series of rotate operations for testing purposes.
+ *
+ * Params:
+ *  @param a: Double pointer to stack a.
+ *  @param b: Double pointer to stack b.
+ *
+ * Description:
+ *  This function performs a series of rotate operations,
+ *  including ra, rb and rr, and verifies the state of the stacks
+ *  after each operation. If any operation fails, returns 1
+ *  and prints an appropriate error message.
+ *
+ * Example usage:
+ *  int result = ft_test_rotate_operations(a, b);
+ *  if (result != 0) {
+ *      // Handle error
+ *  }
+ *
+ * Return:
+ *  0 if the test passed,
+ *  1 if the test failed.
+ */
+int	ft_test_rotate_operations(t_stack *a, t_stack *b);
 
 #endif

@@ -6,62 +6,86 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 14:15:29 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 14:38:05 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:01:59 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test_movements.h"
 
+int	ft_rotate_check(t_stack *a, int value_before)
+{
+	t_node	*last;
+
+	last = a->top;
+	while (last->next)
+		last = last->next;
+	if (last->value != value_before)
+		return (1);
+	return (0);
+}
+
 int	ft_test_ra(t_stack *a, t_stack *b)
 {
-	int	top_before;
+	int		value_before;
 
-	top_before = a->top->value;
 	ft_printf(STACKS_BEFORE FT_RA "\n");
 	ft_print_stacks(a, b);
+	if (a->size >= 2)
+		value_before = a->top->value;
 	ft_ra(a);
 	ft_printf(STACKS_AFTER FT_RA "\n");
 	ft_print_stacks(a, b);
-	if (a->top->next->next->next->value != top_before)
-		return (1);
+	if (a->size >= 2)
+		return (ft_rotate_check(a, value_before));
 	return (0);
 }
 
 int	ft_test_rb(t_stack *a, t_stack *b)
 {
-	int	top_before;
+	int		value_before;
 
-	top_before = b->top->value;
 	ft_printf(STACKS_BEFORE FT_RB "\n");
 	ft_print_stacks(a, b);
+	if (b->size >= 2)
+		value_before = b->top->value;
 	ft_rb(b);
 	ft_printf(STACKS_AFTER FT_RB "\n");
 	ft_print_stacks(a, b);
-	if (b->top->next->next->next->value != top_before)
-		return (1);
+	if (b->size >= 2)
+		return (ft_rotate_check(b, value_before));
 	return (0);
 }
 
 int	ft_test_rr(t_stack *a, t_stack *b)
 {
-	int	top_a_before;
-	int	top_b_before;
+	int		a_value_before;
+	int		a_result;
+	int		b_value_before;
+	int		b_result;
 
-	top_a_before = a->top->value;
-	top_b_before = b->top->value;
 	ft_printf(STACKS_BEFORE FT_RR "\n");
 	ft_print_stacks(a, b);
+	if (a->size >= 2)
+		a_value_before = a->top->value;
+	if (b->size >= 2)
+		b_value_before = b->top->value;
 	ft_rr(a, b);
 	ft_printf(STACKS_AFTER FT_RR "\n");
 	ft_print_stacks(a, b);
-	if (a->top->next->next->next->value != top_a_before
-		|| b->top->next->next->next->value != top_b_before)
+	a_result = 0;
+	b_result = 0;
+	if (a->size >= 2)
+		a_result = ft_rotate_check(a, a_value_before);
+	if (b->size >= 2)
+		b_result = ft_rotate_check(b, b_value_before);
+	if (a_result || b_result)
 		return (1);
 	return (0);
 }
 
 int	ft_test_rotate_operations(t_stack *a, t_stack *b)
 {
+	ft_pop_element(a);
 	ft_printf(YELLOW TEST_ROTATE RESET_COLOR);
 	if (ft_test_ra(a, b) != 0)
 	{
