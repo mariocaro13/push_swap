@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:27:17 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 12:18:32 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 14:09:22 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,28 @@
 */
 
 # include "stack.h"
+# include "ft_printf.h"
+
+/**
+*  ____  _____ _____ ___ _   _ _____ ____  
+* |  _ \| ____|  ___|_ _| \ | | ____/ ___| 
+* | | | |  _| | |_   | ||  \| |  _| \___ \ 
+* | |_| | |___|  _|  | || |\  | |___ ___) |
+* |____/|_____|_|   |___|_| \_|_____|____/ 
+*
+*/
+
+// Swap Messages
+# define SWAP_SA "sa\n"
+# define SWAP_SB "sb\n"
+# define SWAP_SS "ss\n"
+// Push Messages
+# define PUSH_PA "pa\n"
+# define PUSH_PB "pb\n"
+// Rotate Messages
+# define ROTATE_RA "ra\n"
+# define ROTATE_RB "rb\n"
+# define ROTATE_RR "rr\n"
 
 /**
 *  ____  ____   ___ _____ ___ _______   ______  _____ ____  
@@ -166,5 +188,89 @@ void	ft_pa(t_stack *a, t_stack *b);
  *  This function does not return a value.
  */
 void	ft_pb(t_stack *a, t_stack *b);
+
+// ROTATE
+
+/** ft_rotate:
+ *  - Rotates all elements of a stack up by one position.
+ *	The first element becomes the last.
+ *
+ * Params:
+ *  @param stack: Pointer to the stack.
+ *
+ * Description:
+ *  This function rotates all elements of a stack up by one position.
+ *  The first element becomes the last. If the stack has less than two elements,
+ *  the function does nothing.
+ *
+ * Example usage:
+ *  ft_rotate(stack);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_rotate(t_stack *stack);
+
+/** ft_ra:
+ *  - Rotates all elements of stack a up by one position.
+ *	The first element becomes the last.
+ *
+ * Params:
+ *  @param a: Pointer to stack a.
+ *
+ * Description:
+ *  This function rotates all elements of stack a up by one position.
+ *  The first element becomes the last. If the stack has less than two elements,
+ *  the function does nothing.
+ *
+ * Example usage:
+ *  ft_ra(a);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_ra(t_stack *a);
+
+/** ft_rb:
+ *  - Rotates all elements of stack b up by one position.
+ *	The first element becomes the last.
+ *
+ * Params:
+ *  @param b: Pointer to stack b.
+ *
+ * Description:
+ *  This function rotates all elements of stack b up by one position.
+ *  The first element becomes the last. If the stack has less than two elements,
+ *  the function does nothing.
+ *
+ * Example usage:
+ *  ft_rb(b);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_rb(t_stack *b);
+
+/** ft_rr:
+ *  - Rotates all elements of both stack a and stack b up by one position.
+ *	The first element becomes the last.
+ *
+ * Params:
+ *  @param a: Pointer to stack a.
+ *  @param b: Pointer to stack b.
+ *
+ * Description:
+ *  This function rotates all elements of both stack a and stack b up,
+ * 	by one position. The first element becomes the last.
+ *	If the stack has less than two elements,
+ *  the function does nothing.
+ *
+ * Example usage:
+ *  ft_rr(a, b);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_rr(t_stack *a, t_stack *b);
 
 #endif
