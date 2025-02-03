@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:27:17 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 14:09:22 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:32:42 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@
 # define ROTATE_RA "ra\n"
 # define ROTATE_RB "rb\n"
 # define ROTATE_RR "rr\n"
+// Reverse Rotate Messages
+# define ROTATE_RRA "ra\n"
+# define ROTATE_RRB "rb\n"
+# define ROTATE_RRR "rr\n"
 
 /**
 *  ____  ____   ___ _____ ___ _______   ______  _____ ____  
@@ -272,5 +276,88 @@ void	ft_rb(t_stack *b);
  *  This function does not return a value.
  */
 void	ft_rr(t_stack *a, t_stack *b);
+
+// REVERSE ROTATE
+
+/** ft_reverse_rotate:
+ *  - Shifts down all elements of a stack by one position.
+ *	The last element becomes the first.
+ *
+ * Params:
+ *  @param stack: Pointer to the stack.
+ *
+ * Description:
+ *  This function shifts down all elements of a stack by one position.
+ *  The last element becomes the first. If the stack has less than two elements,
+ *  the function does nothing.
+ *
+ * Example usage:
+ *  ft_reverse_rotate(stack);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_reverse_rotate(t_stack *stack);
+
+/** ft_rra:
+ *  - Shifts down all elements of stack a by one position.
+ * 	The last element becomes the first.
+ *
+ * Params:
+ *  @param a: Pointer to stack a.
+ *
+ * Description:
+ *  This function shifts down all elements of stack a by one position.
+ *  The last element becomes the first. If the stack has less than two elements,
+ *  the function does nothing.
+ *
+ * Example usage:
+ *  ft_rra(a);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_rra(t_stack *a);
+
+/** ft_rrb:
+ *  - Shifts down all elements of stack b by one position.
+ * 	The last element becomes the first.
+ *
+ * Params:
+ *  @param b: Pointer to stack b.
+ *
+ * Description:
+ *  This function shifts down all elements of stack b by one position.
+ *  The last element becomes the first. If the stack has less than two elements,
+ *  the function does nothing.
+ *
+ * Example usage:
+ *  ft_rrb(b);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_rrb(t_stack *b);
+
+/** ft_rrr:
+ *  - Shifts down all elements of both stack a and stack b by one position.
+ * 	The last element becomes the first.
+ *
+ * Params:
+ *  @param a: Pointer to stack a.
+ *  @param b: Pointer to stack b.
+ *
+ * Description:
+ *  This function shifts down all elements of stacks a and b by one position.
+ *  The last element becomes the first.
+ * 	If either stack has less than two elements, the function does nothing.
+ *
+ * Example usage:
+ *  ft_rrr(a, b);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_rrr(t_stack *a, t_stack *b);
 
 #endif

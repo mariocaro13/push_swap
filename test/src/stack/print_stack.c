@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:23:32 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/29 18:31:26 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:09:20 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,16 @@ void	ft_print_stacks(t_stack *a, t_stack *b)
 			current_a = current_a->next;
 		}
 		else
-			ft_printf("- ");
+			ft_printf("  ");
 		if (current_b)
 		{
 			ft_printf("%d", current_b->value);
 			current_b = current_b->next;
 		}
 		else
-			ft_printf("-");
+			ft_printf(" ");
 		ft_printf("\n");
 	}
+	ft_printf("- -\n");
 	ft_printf("a b\n------------------------------------------------\n\n");
 }
