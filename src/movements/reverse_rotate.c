@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 16:24:16 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 16:31:24 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 16:57:48 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	ft_reverse_rotate(t_stack *stack)
 	last->next = first;
 	stack->top = last;
 }
-
 
 void	ft_rra(t_stack *a)
 {

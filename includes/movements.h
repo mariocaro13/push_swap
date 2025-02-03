@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:27:17 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 16:32:42 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 17:26:46 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@
 # define ROTATE_RB "rb\n"
 # define ROTATE_RR "rr\n"
 // Reverse Rotate Messages
-# define ROTATE_RRA "ra\n"
-# define ROTATE_RRB "rb\n"
-# define ROTATE_RRR "rr\n"
+# define ROTATE_RRA "rra\n"
+# define ROTATE_RRB "rrb\n"
+# define ROTATE_RRR "rrr\n"
 
 /**
 *  ____  ____   ___ _____ ___ _______   ______  _____ ____  

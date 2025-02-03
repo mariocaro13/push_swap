@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 14:15:29 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 16:01:59 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/03 17:24:21 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ int	ft_test_rr(t_stack *a, t_stack *b)
 
 int	ft_test_rotate_operations(t_stack *a, t_stack *b)
 {
-	ft_pop_element(a);
 	ft_printf(YELLOW TEST_ROTATE RESET_COLOR);
 	if (ft_test_ra(a, b) != 0)
 	{

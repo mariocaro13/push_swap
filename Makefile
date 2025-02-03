@@ -6,7 +6,7 @@
 #    By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/28 18:35:29 by mcaro-ro          #+#    #+#              #
-#    Updated: 2025/02/03 16:32:18 by mcaro-ro         ###   ########.fr        #
+#    Updated: 2025/02/03 16:59:05 by mcaro-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,21 +107,22 @@ TEST_NAME = push_swap_test
 TEST_DIR = test
 TEST_INCLUDES = $(TEST_DIR)/includes
 
-TEST_SRC = $(TEST_DIR)/main.c						\
-	$(PUSH_SWAP_DIR)/push_swap.c					\
-	$(HASH_TABLES_DIR)/hash_tables.c				\
-	$(VALIDATE_DIR)/validate.c						\
-	$(STACK_DIR)/stack_operations.c					\
-	$(MOVEMENTS_DIR)/swap.c							\
-	$(MOVEMENTS_DIR)/push.c							\
-	$(MOVEMENTS_DIR)/rotate.c						\
-	$(MOVEMENTS_DIR)/reverse_rotate.c				\
-	$(TEST_DIR)/$(STACK_DIR)/print_stack.c			\
-	$(TEST_DIR)/$(STACK_DIR)/test_stack.c			\
-	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_movements.c	\
-	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_swap.c		\
-	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_push.c		\
-	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_rotate.c		\
+TEST_SRC = $(TEST_DIR)/main.c							\
+	$(PUSH_SWAP_DIR)/push_swap.c						\
+	$(HASH_TABLES_DIR)/hash_tables.c					\
+	$(VALIDATE_DIR)/validate.c							\
+	$(STACK_DIR)/stack_operations.c						\
+	$(MOVEMENTS_DIR)/swap.c								\
+	$(MOVEMENTS_DIR)/push.c								\
+	$(MOVEMENTS_DIR)/rotate.c							\
+	$(MOVEMENTS_DIR)/reverse_rotate.c					\
+	$(TEST_DIR)/$(STACK_DIR)/print_stack.c				\
+	$(TEST_DIR)/$(STACK_DIR)/test_stack.c				\
+	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_movements.c		\
+	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_swap.c			\
+	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_push.c			\
+	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_rotate.c			\
+	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_reverse_rotate.c	\
 
 
 TEST_OBJECTS = $(TEST_SRC:.c=.o)
