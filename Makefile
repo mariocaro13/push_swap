@@ -6,7 +6,7 @@
 #    By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/28 18:35:29 by mcaro-ro          #+#    #+#              #
-#    Updated: 2025/02/04 13:26:29 by mcaro-ro         ###   ########.fr        #
+#    Updated: 2025/02/04 18:57:17 by mcaro-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ HASH_TABLES_DIR = $(SRC_DIR)/hash_tables
 MOVEMENTS_DIR = $(SRC_DIR)/movements
 STACK_DIR = $(SRC_DIR)/stack
 VALIDATE_DIR = $(SRC_DIR)/validate
-TIM_SORT_DIR = $(SRC_DIR)/tim_sort
+SORT_DIR = $(SRC_DIR)/sort
 
 # LIBRARIES
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -58,9 +58,6 @@ SRC = $(SRC_DIR)/main.c					\
 	$(MOVEMENTS_DIR)/push.c				\
 	$(MOVEMENTS_DIR)/rotate.c			\
 	$(MOVEMENTS_DIR)/reverse_rotate.c	\
-	$(TIM_SORT_DIR)/insertion_sort.c	\
-	$(TIM_SORT_DIR)/merge.c				\
-	$(TIM_SORT_DIR)/tim_sort.c			\
 
 # Objects files
 OBJECTS = $(SRC:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:31:14 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/04 13:43:56 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:39:09 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int		ft_is_integer(const char *str);
  *  1 if the values are validated and stored correctly,
  *  0 if an error occurs.
  */
-int		ft_validate_and_store(char **arr, int size, t_node ***set);
+int		ft_validate(char **arr, int size, t_node ***set);
 
 /** ft_free_resources:
  *  - Frees resources allocated for the hash table and array.

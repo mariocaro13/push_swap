@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:36:13 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 16:01:29 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/04 19:04:19 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,5 +133,25 @@ int		ft_pop_element(t_stack *stack);
  *  This function does not return a value.
  */
 void	ft_free_stack(t_stack *stack);
+
+/** ft_add_arr_to_stack:
+ *  - Adds elements from an array to the stack.
+ *
+ * Params:
+ *  @param arrc: Integer representing the number of elements in the array.
+ *  @param arrv: Array of strings containing the elements to be added.
+ *  @param a: Pointer to the stack where elements will be added.
+ *
+ * Description:
+ *  This function adds elements from a given array to the stack in reverse order.
+ *  It converts each string element to an integer and pushes it onto the stack.
+ *
+ * Example usage:
+ *  ft_add_arr_to_stack(arrc, arrv, a);
+ *
+ * Return:
+ *  This function does not return a value.
+ */
+void	ft_add_arr_to_stack(int arrc, char **arrv, t_stack *a);
 
 #endif

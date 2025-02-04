@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:05:27 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/04 13:41:16 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/04 17:39:09 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_is_integer(const char *str)
 	return (1);
 }
 
-int	ft_validate_and_store(char **arr, int size, t_node ***set)
+int	ft_validate(char **arr, int size, t_node ***set)
 {
 	int	num;
 	int	index;

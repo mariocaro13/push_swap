@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:41:47 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/29 14:21:01 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:55:17 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,16 @@ void	ft_free_stack(t_stack *stack)
 		current = next;
 	}
 	free(stack);
+}
+
+void	ft_add_arr_to_stack(int arrc, char **arrv, t_stack *a)
+{
+	int		index;
+
+	index = arrc - 1;
+	while (index > 0)
+	{
+		ft_push_element(a, ft_atoi(arrv[index]));
+		index--;
+	}
 }
