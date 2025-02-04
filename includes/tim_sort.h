@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   tim_sort.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 18:48:04 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/04 11:58:11 by mcaro-ro         ###   ########.fr       */
+/*   Created: 2025/02/04 11:47:18 by mcaro-ro          #+#    #+#             */
+/*   Updated: 2025/02/04 12:46:24 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef TIM_SORT_H
+# define TIM_SORT_H
 
 /**
 *  ___ _   _  ____ _    _   _ ____  _____ ____  
@@ -22,11 +22,8 @@
 *
 */
 
-# include "ft_printf.h"
-# include "validate.h"
 # include "stack.h"
 # include "movements.h"
-# include "tim_sort.h"
 
 /**
 *  ____  _____ _____ ___ _   _ _____ ____  
@@ -37,8 +34,7 @@
 *
 */
 
-// Messages
-# define ERROR "Error\n"
+# define RUN 32
 
 /**
 *  ____  ____   ___ _____ ___ _______   ______  _____ ____  
@@ -49,6 +45,10 @@
 *
 */
 
-int	push_swap(int argc, char **argv);
+void	ft_insertion_sort(t_stack *a, int size);
+
+void	ft_merge(t_stack *a, t_stack *b, int left_size, int right_size);
+
+void	ft_tim_sort(t_stack *a, t_stack *b);
 
 #endif

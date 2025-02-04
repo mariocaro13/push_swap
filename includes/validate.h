@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 19:31:14 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/31 16:08:34 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/04 13:43:56 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		ft_is_integer(const char *str);
  * Params:
  *  @param arr: Array of command-line arguments.
  *  @param set: Double pointer to the hash table.
- *  @param table_size: Size of the hash table.
+ *  @param size: Size of the hash table.
  *
  * Description:
  *  This function validates the given arguments and stores
@@ -77,7 +77,7 @@ int		ft_is_integer(const char *str);
  *  1 if the values are validated and stored correctly,
  *  0 if an error occurs.
  */
-int		ft_validate_and_store(char **arr, int table_size, t_node ***set);
+int		ft_validate_and_store(char **arr, int size, t_node ***set);
 
 /** ft_free_resources:
  *  - Frees resources allocated for the hash table and array.
