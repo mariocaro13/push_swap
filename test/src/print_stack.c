@@ -6,32 +6,27 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 17:23:32 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 16:09:20 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/07 20:55:21 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test_stack.h"
+#include "print_stacks.h"
 
-void	ft_print_stacks(t_stack *a, t_stack *b)
+void	ft_print_stacks(t_node *a, t_node *b)
 {
-	t_node	*current_a;
-	t_node	*current_b;
-
-	current_a = a->top;
-	current_b = b->top;
-	while (current_a || current_b)
+	while (a || b)
 	{
-		if (current_a)
+		if (a)
 		{
-			ft_printf("%d ", current_a->value);
-			current_a = current_a->next;
+			ft_printf("%d ", a->value);
+			a = a->next;
 		}
 		else
 			ft_printf("  ");
-		if (current_b)
+		if (b)
 		{
-			ft_printf("%d", current_b->value);
-			current_b = current_b->next;
+			ft_printf("%d", b->value);
+			b = b->next;
 		}
 		else
 			ft_printf(" ");

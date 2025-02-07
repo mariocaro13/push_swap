@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stacks_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/29 16:01:19 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 18:05:48 by mcaro-ro         ###   ########.fr       */
+/*   Created: 2025/02/07 16:08:06 by mcaro-ro          #+#    #+#             */
+/*   Updated: 2025/02/07 18:23:52 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "test_movements.h"
-#include "test_stack.h"
+#include "stack.h"
 
-int	main(void)
+bool	is_stack_sorted(t_node *stack)
 {
-	t_stack	*a;
-	t_stack	*b;
+	if (!stack)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
+}
 
-	if (ft_test_stack_operations(&a, &b) != 0)
+int	ft_stack_len(t_node *stack)
+{
+	int	len;
+
+	if (!stack)
+		return (0);
+	len = 0;
+	while (stack)
 	{
-		ft_printf(RED STACK_FAILED STACK_FAILED RESET_COLOR);
-		return (1);
+		stack = stack->next;
+		len++;
 	}
-	ft_test_stack_init(&a, &b);
-	ft_test_stack_push(a, b);
-	if (ft_test_movement_operations(&a, &b) != 0)
-	{
-		ft_printf(RED MOVEMENT_FAILED RESET_COLOR);
-		return (1);
-	}
-	ft_free_stack(a);
-	ft_free_stack(b);
-	return (0);
+	return (len);
 }

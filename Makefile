@@ -6,7 +6,7 @@
 #    By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/28 18:35:29 by mcaro-ro          #+#    #+#              #
-#    Updated: 2025/02/04 18:57:17 by mcaro-ro         ###   ########.fr        #
+#    Updated: 2025/02/07 21:11:16 by mcaro-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ GREEN = \033[0;32m
 RESET := \033[0m
 
 # INCLUDE directory
-INCLUDE_DIR = includes
+INCLUDE_DIR = inc
 LIBFT_DIR = $(INCLUDE_DIR)/libft
 FTPRINTF_DIR = $(INCLUDE_DIR)/ft_printf
 
@@ -27,11 +27,11 @@ SRC_DIR = src
 LIBFT_DIR = $(SRC_DIR)/libft
 FTPRINTF_DIR = $(SRC_DIR)/ft_printf
 PUSH_SWAP_DIR = $(SRC_DIR)/push_swap
-HASH_TABLES_DIR = $(SRC_DIR)/hash_tables
-MOVEMENTS_DIR = $(SRC_DIR)/movements
-STACK_DIR = $(SRC_DIR)/stack
-VALIDATE_DIR = $(SRC_DIR)/validate
 SORT_DIR = $(SRC_DIR)/sort
+UTILS_DIR = $(SRC_DIR)/utils
+STACK_DIR = $(SRC_DIR)/stack
+NODE_DIR = $(STACK_DIR)/node
+COMMANDS_DIR = $(STACK_DIR)/commands
 
 # LIBRARIES
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -51,20 +51,27 @@ INCLUDE_DIRS = -I$(INCLUDE_DIR) -I$(SRC_DIR) -I$(LIBFT_DIR) -I$(FTPRINTF_DIR)
 # Source files and object files
 SRC = $(SRC_DIR)/main.c					\
 	$(PUSH_SWAP_DIR)/push_swap.c		\
-	$(HASH_TABLES_DIR)/hash_tables.c	\
-	$(VALIDATE_DIR)/validate.c			\
-	$(STACK_DIR)/stack_operations.c		\
-	$(MOVEMENTS_DIR)/swap.c				\
-	$(MOVEMENTS_DIR)/push.c				\
-	$(MOVEMENTS_DIR)/rotate.c			\
-	$(MOVEMENTS_DIR)/reverse_rotate.c	\
+	$(UTILS_DIR)/atol.c					\
+	$(UTILS_DIR)/split_cursor.c			\
+	$(UTILS_DIR)/handle_errors.c		\
+	$(STACK_DIR)/stacks_utils.c			\
+	$(STACK_DIR)/stacks_getters.c		\
+	$(STACK_DIR)/stacks_operations.c	\
+	$(NODE_DIR)/node.c					\
+	$(NODE_DIR)/set_a_nodes.c			\
+	$(NODE_DIR)/set_b_nodes.c			\
+	$(COMMANDS_DIR)/swap.c				\
+	$(COMMANDS_DIR)/push.c				\
+	$(COMMANDS_DIR)/rotate.c			\
+	$(COMMANDS_DIR)/reverse_rotate.c	\
+	$(SORT_DIR)/sort.c					\
 
 # Objects files
 OBJECTS = $(SRC:.c=.o)
 
 # Compilation settings
 CC = cc
-CFLAGS = -Wall -Wextra -Werror $(INCLUDE_DIRS) -g3  -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror $(INCLUDE_DIRS) #-g3  -fsanitize=address
 
 # Compile source files into object files
 %.o: %.c
@@ -80,7 +87,7 @@ all: $(NAME)
 
 # Clean up object files
 clean:
-	@rm -f $(OBJECTS) $(TEST_OBJECTS)
+	@rm -f $(OBJECTS) $(OBJECTS) $(TEST_OBJECTS)
 	@$(MAKE) -C $(LIBFT_DIR) clean --silent
 	@$(MAKE) -C $(FTPRINTF_DIR) clean --silent
 
@@ -92,53 +99,6 @@ fclean: clean
 
 # Rebuild the project
 re: fclean all
-
-# Run Norminette
-norm: 
-	norminette $(INCLUDE_DIR) $(SRC)
-
-#  _____ _____ ____ _____ 
-# |_   _| ____/ ___|_   _|
-#   | | |  _| \___ \ | |  
-#   | | | |___ ___) || |  
-#   |_| |_____|____/ |_|  
-#
-
-TEST_NAME = push_swap_test
-TEST_DIR = test
-TEST_INCLUDES = $(TEST_DIR)/includes
-
-TEST_SRC = $(TEST_DIR)/main.c							\
-	$(PUSH_SWAP_DIR)/push_swap.c						\
-	$(HASH_TABLES_DIR)/hash_tables.c					\
-	$(VALIDATE_DIR)/validate.c							\
-	$(STACK_DIR)/stack_operations.c						\
-	$(MOVEMENTS_DIR)/swap.c								\
-	$(MOVEMENTS_DIR)/push.c								\
-	$(MOVEMENTS_DIR)/rotate.c							\
-	$(MOVEMENTS_DIR)/reverse_rotate.c					\
-	$(TIM_SORT_DIR)/insertion_sort.c					\
-	$(TIM_SORT_DIR)/merge.c								\
-	$(TIM_SORT_DIR)/tim_sort.c							\
-	$(TEST_DIR)/$(STACK_DIR)/print_stack.c				\
-	$(TEST_DIR)/$(STACK_DIR)/test_stack.c				\
-	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_movements.c		\
-	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_swap.c			\
-	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_push.c			\
-	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_rotate.c			\
-	$(TEST_DIR)/$(MOVEMENTS_DIR)/test_reverse_rotate.c	\
-
-
-TEST_OBJECTS = $(TEST_SRC:.c=.o)
-
-#Include dirs for testing
-INCLUDE_DIRS = -I$(INCLUDE_DIR) -I$(SRC_DIR) -I$(LIBFT_DIR) -I$(FTPRINTF_DIR) -I$(TEST_INCLUDES)
-
-test: $(TEST_NAME)
-
-$(TEST_NAME): $(TEST_OBJECTS) $(LIBFT) $(FTPRINTF)
-	@$(CC) $(CFLAGS) $(TEST_OBJECTS) $(LIBFT) $(FTPRINTF) -o $(TEST_NAME)
-	@echo "$(GREEN)$(TEST_NAME): $(TEST_NAME) has been created successfully!$(RESET)"
 
 .DEFAULT_GOAL := all
 .PHONY: all clean fclean re norm normsrc normincludes test

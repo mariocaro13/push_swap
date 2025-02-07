@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 18:48:04 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/04 18:56:32 by mcaro-ro         ###   ########.fr       */
+/*   Created: 2025/02/07 14:56:00 by mcaro-ro          #+#    #+#             */
+/*   Updated: 2025/02/07 18:38:05 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef UTILS_H
+# define UTILS_H
 
 /**
 *  ___ _   _  ____ _    _   _ ____  _____ ____  
@@ -22,10 +22,9 @@
 *
 */
 
+# include <stdbool.h>
 # include "ft_printf.h"
-# include "validate.h"
 # include "stack.h"
-# include "movements.h"
 
 /**
 *  ____  _____ _____ ___ _   _ _____ ____  
@@ -48,6 +47,15 @@
 *
 */
 
-int	push_swap(int argc, char **argv);
+// Utils
+int		ft_atol(const char *str);
+char	**ft_split_cursor(char *str, char c);
+
+// Handle errors
+bool	is_error_syntax(char *arr);
+bool	is_duplicate(t_node *a, int value);
+void	ft_free_stack(t_node **stack);
+void	ft_free_errors(t_node **a, char **arrv, bool split_flag);
+void	ft_free_arr(char **arrv);
 
 #endif

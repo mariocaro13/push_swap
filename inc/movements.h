@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 13:27:17 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/03 17:26:46 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/07 15:12:25 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@
  * Return:
  *  This function does not return a value.
  */
-void	ft_swap(t_stack *stack);
+void	ft_swap(t_node **stack);
 
 /** ft_sa:
  *  - Swaps the top two elements of stack a.
@@ -95,7 +95,7 @@ void	ft_swap(t_stack *stack);
  * Return:
  *  This function does not return a value.
  */
-void	ft_sa(t_stack *a);
+void	ft_sa(t_node **a);
 
 /** ft_sb:
  *  - Swaps the top two elements of stack b.
@@ -113,7 +113,7 @@ void	ft_sa(t_stack *a);
  * Return:
  *  This function does not return a value.
  */
-void	ft_sb(t_stack *b);
+void	ft_sb(t_node **b);
 
 /** ft_ss:
  *  - Swaps the top two elements of both stack a and stack b.
@@ -132,7 +132,7 @@ void	ft_sb(t_stack *b);
  * Return:
  *  This function does not return a value.
  */
-void	ft_ss(t_stack *a, t_stack *b);
+void	ft_ss(t_node **a, t_node **b);
 
 // PUSh
 
@@ -153,7 +153,7 @@ void	ft_ss(t_stack *a, t_stack *b);
  * Return:
  *  This function does not return a value.
  */
-void	ft_push(t_stack *a, t_stack *b);
+void	ft_push(t_node **a, t_node **b);
 
 /** ft_pa:
  *  - Pushes the top element of stack b onto stack a by calling ft_push.
@@ -172,7 +172,7 @@ void	ft_push(t_stack *a, t_stack *b);
  * Return:
  *  This function does not return a value.
  */
-void	ft_pa(t_stack *a, t_stack *b);
+void	ft_pa(t_node **a, t_node **b);
 
 /** ft_pb:
  *  - Pushes the top element of stack a onto stack b.
@@ -191,7 +191,7 @@ void	ft_pa(t_stack *a, t_stack *b);
  * Return:
  *  This function does not return a value.
  */
-void	ft_pb(t_stack *a, t_stack *b);
+void	ft_pb(t_node **a, t_node **b);
 
 // ROTATE
 
@@ -213,7 +213,7 @@ void	ft_pb(t_stack *a, t_stack *b);
  * Return:
  *  This function does not return a value.
  */
-void	ft_rotate(t_stack *stack);
+void	ft_rotate(t_node **t_node);
 
 /** ft_ra:
  *  - Rotates all elements of stack a up by one position.
@@ -233,7 +233,7 @@ void	ft_rotate(t_stack *stack);
  * Return:
  *  This function does not return a value.
  */
-void	ft_ra(t_stack *a);
+void	ft_ra(t_node **a);
 
 /** ft_rb:
  *  - Rotates all elements of stack b up by one position.
@@ -253,7 +253,7 @@ void	ft_ra(t_stack *a);
  * Return:
  *  This function does not return a value.
  */
-void	ft_rb(t_stack *b);
+void	ft_rb(t_node **b);
 
 /** ft_rr:
  *  - Rotates all elements of both stack a and stack b up by one position.
@@ -275,7 +275,9 @@ void	ft_rb(t_stack *b);
  * Return:
  *  This function does not return a value.
  */
-void	ft_rr(t_stack *a, t_stack *b);
+void	ft_rr(t_node **a, t_node **b);
+
+void	ft_rotate_both(t_node **a, t_node **b, t_node *cheapest);
 
 // REVERSE ROTATE
 
@@ -297,7 +299,7 @@ void	ft_rr(t_stack *a, t_stack *b);
  * Return:
  *  This function does not return a value.
  */
-void	ft_reverse_rotate(t_stack *stack);
+void	ft_reverse_rotate(t_node **stack);
 
 /** ft_rra:
  *  - Shifts down all elements of stack a by one position.
@@ -317,7 +319,7 @@ void	ft_reverse_rotate(t_stack *stack);
  * Return:
  *  This function does not return a value.
  */
-void	ft_rra(t_stack *a);
+void	ft_rra(t_node **a);
 
 /** ft_rrb:
  *  - Shifts down all elements of stack b by one position.
@@ -337,7 +339,7 @@ void	ft_rra(t_stack *a);
  * Return:
  *  This function does not return a value.
  */
-void	ft_rrb(t_stack *b);
+void	ft_rrb(t_node **b);
 
 /** ft_rrr:
  *  - Shifts down all elements of both stack a and stack b by one position.
@@ -358,6 +360,8 @@ void	ft_rrb(t_stack *b);
  * Return:
  *  This function does not return a value.
  */
-void	ft_rrr(t_stack *a, t_stack *b);
+void	ft_rrr(t_node **a, t_node **b);
+
+void	ft_rev_rotate_both(t_node **a, t_node **b, t_node *cheapest);
 
 #endif

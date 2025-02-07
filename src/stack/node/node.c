@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hash_tables.c                                      :+:      :+:    :+:   */
+/*   node.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 22:01:57 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/01/29 01:22:15 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/07 15:17:04 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "hash_tables.h"
+#include "node.h"
 
 t_node	*ft_create_node(int value)
 {
@@ -24,48 +24,32 @@ t_node	*ft_create_node(int value)
 	return (node);
 }
 
-unsigned int	ft_hash(int value, int table_size)
-{
-	return ((unsigned int)((value % table_size) + table_size) % table_size);
-}
-
-int	ft_insert_into_set(t_node **set, int table_size, int value)
-{
-	t_node			*node;
-	unsigned int	index;
-
-	index = ft_hash(value, table_size);
-	node = set[index];
-	while (node)
-	{
-		if (node->value == value)
-			return (0);
-		node = node->next;
-	}
-	node = ft_create_node(value);
-	if (!node)
-		return (0);
-	node->next = set[index];
-	set[index] = node;
-	return (1);
-}
-
-void	ft_free_set(t_node **set, int size)
+void	ft_append_node(t_node **stack, int value)
 {
 	t_node	*node;
-	t_node	*aux;
-	int		index;
+	t_node	*last_node;
 
-	index = 0;
-	while (index < size)
+	if (!stack)
+		return ;
+	node = ft_create_node(value);
+	if (!(*stack))
 	{
-		node = set[index];
-		while (node)
-		{
-			aux = node;
-			node = node->next;
-			free(aux);
-		}
-		index++;
+		*stack = node;
+		node->prev = NULL;
 	}
+	else
+	{
+		last_node = ft_get_last_node(*stack);
+		last_node->next = node;
+		node->prev = last_node;
+	}
+}
+
+t_node	*ft_get_last_node(t_node *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
