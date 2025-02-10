@@ -6,11 +6,12 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 18:46:50 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/07 21:02:33 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/10 19:28:06 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "print_stacks.h"
 
 int	push_swap(int arrc, char **arrv)
 {
@@ -19,7 +20,7 @@ int	push_swap(int arrc, char **arrv)
 
 	a = NULL;
 	b = NULL;
-	if (arrc == 1 || (arrc == 2 && !arrv[1][0]))
+	if (arrc == 1)
 		return (1);
 	else if (arrc == 2)
 		arrv = ft_split_cursor(arrv[1], ' ');

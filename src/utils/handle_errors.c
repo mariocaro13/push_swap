@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 14:07:34 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/07 20:05:12 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:25:14 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_free_errors(t_node **a, char **arrv, bool split_flag)
 		ft_free_stack(a);
 	if (split_flag)
 		ft_free_arr(arrv);
-	ft_printf(ERROR);
+	write(2, ERROR, 6);
 	exit(1);
 }
 

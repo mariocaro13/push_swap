@@ -6,7 +6,7 @@
 #    By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/28 18:35:29 by mcaro-ro          #+#    #+#              #
-#    Updated: 2025/02/07 21:11:16 by mcaro-ro         ###   ########.fr        #
+#    Updated: 2025/02/10 19:45:21 by mcaro-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ RESET := \033[0m
 INCLUDE_DIR = inc
 LIBFT_DIR = $(INCLUDE_DIR)/libft
 FTPRINTF_DIR = $(INCLUDE_DIR)/ft_printf
+TEST_DIR = test/inc
 
 # SRC DIRS
 SRC_DIR = src
@@ -32,6 +33,7 @@ UTILS_DIR = $(SRC_DIR)/utils
 STACK_DIR = $(SRC_DIR)/stack
 NODE_DIR = $(STACK_DIR)/node
 COMMANDS_DIR = $(STACK_DIR)/commands
+PRINT_STACKS_DIR = test/src
 
 # LIBRARIES
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -46,7 +48,7 @@ $(FTPRINTF):
 	@$(MAKE) -C $(FTPRINTF_DIR) --silent
 
 #Include dirs
-INCLUDE_DIRS = -I$(INCLUDE_DIR) -I$(SRC_DIR) -I$(LIBFT_DIR) -I$(FTPRINTF_DIR)
+INCLUDE_DIRS = -I$(INCLUDE_DIR) -I$(SRC_DIR) -I$(LIBFT_DIR) -I$(FTPRINTF_DIR) -I$(TEST_DIR)
 
 # Source files and object files
 SRC = $(SRC_DIR)/main.c					\
@@ -65,13 +67,14 @@ SRC = $(SRC_DIR)/main.c					\
 	$(COMMANDS_DIR)/rotate.c			\
 	$(COMMANDS_DIR)/reverse_rotate.c	\
 	$(SORT_DIR)/sort.c					\
+	$(PRINT_STACKS_DIR)/print_stack.c
 
 # Objects files
 OBJECTS = $(SRC:.c=.o)
 
 # Compilation settings
 CC = cc
-CFLAGS = -Wall -Wextra -Werror $(INCLUDE_DIRS) #-g3  -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror $(INCLUDE_DIRS) -g3  #-fsanitize=address
 
 # Compile source files into object files
 %.o: %.c
@@ -87,7 +90,7 @@ all: $(NAME)
 
 # Clean up object files
 clean:
-	@rm -f $(OBJECTS) $(OBJECTS) $(TEST_OBJECTS)
+	@rm -f $(OBJECTS) $(OBJECTS)
 	@$(MAKE) -C $(LIBFT_DIR) clean --silent
 	@$(MAKE) -C $(FTPRINTF_DIR) clean --silent
 

@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 14:56:00 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/07 18:38:05 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/10 19:03:55 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@
 */
 
 // Utils
-int		ft_atol(const char *str);
+long	ft_atol(const char *str);
 char	**ft_split_cursor(char *str, char c);
 
 // Handle errors

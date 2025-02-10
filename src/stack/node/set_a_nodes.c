@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 12:42:34 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/07 15:11:00 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:03:32 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void	ft_set_cheapest(t_node *stack)
 	cheapest_value = LONG_MAX;
 	while (stack)
 	{
+		stack->cheapest = false;
 		if (stack->push_cost < cheapest_value)
 		{
 			cheapest_value = stack->push_cost;

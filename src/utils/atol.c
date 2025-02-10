@@ -6,7 +6,7 @@
 /*   By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:51:11 by mcaro-ro          #+#    #+#             */
-/*   Updated: 2025/02/07 19:23:18 by mcaro-ro         ###   ########.fr       */
+/*   Updated: 2025/02/07 22:21:40 by mcaro-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_isspace(char c)
 			|| c == '\f' || c == '\r'));
 }
 
-int	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
 	long	num;
 	int		sign;
