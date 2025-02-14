@@ -6,7 +6,7 @@
 #    By: mcaro-ro <mcaro-ro@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/28 18:35:29 by mcaro-ro          #+#    #+#              #
-#    Updated: 2025/02/10 19:45:21 by mcaro-ro         ###   ########.fr        #
+#    Updated: 2025/02/14 03:47:25 by mcaro-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,7 +90,7 @@ all: $(NAME)
 
 # Clean up object files
 clean:
-	@rm -f $(OBJECTS) $(OBJECTS)
+	@rm -f $(OBJECTS)
 	@$(MAKE) -C $(LIBFT_DIR) clean --silent
 	@$(MAKE) -C $(FTPRINTF_DIR) clean --silent
 
@@ -104,4 +104,4 @@ fclean: clean
 re: fclean all
 
 .DEFAULT_GOAL := all
-.PHONY: all clean fclean re norm normsrc normincludes test
+.PHONY: all clean fclean re
